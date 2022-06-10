@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http:///www.thymeleaf.org">
+<head>
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="text-center" title="[[${pageTitle}]]">
+<form th:action="@{/Releases/saveReleases}" method="post" th:object="${newReleaseDto}" style="max-width: 500px; margin: 0 auto;">
+  <input type="hidden" th:field="*{catalog}">git remote add origin https://github.com/KepheusPinol/Plattenspieler.git
+  <div class="mb-1 row">
+    <label class="form-label" for="artist">Künstler:in</label>
+    <div class="">
+      <input type="text" th:field="*{artist}" class="form-control" id="artist" name="artist" required maxlength="250">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="title">Albumtitel</label>
+    <div class="">
+      <input type="text" th:field="*{title}" class="form-control" id="title" name="title" required maxlength="250">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="releasedate">Veröffentlichungsdatum (Format: dd.mm.yyyy) </label>
+    <div class="">
+      <input type="text" th:field="*{releasedate}" class="form-control" id="releasedate" name="releasedate" required maxlength="10">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="length">Länge in Min</label>
+    <div class="">
+      <input type="text" th:field="*{length}" class="form-control" id="length" name="length" required maxlength="10">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="tracks">Anzahl Tracks</label>
+    <div class="">
+      <input type="number" th:field="*{tracks}" class="form-control" id="tracks" name="tracks" required>
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="catalog">Katalognummer</label>
+    <div class="">
+      <input type="text" th:field="*{catalog}" class="form-control" id="catalog" name="catalog"required maxlength="250">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="genre">Genre</label>
+    <div class="">
+      <input type="text" th:field="*{genre}" class="form-control" id="genre" name="genre" required maxlength="250">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="label">Label</label>
+    <div class="">
+      <input type="text" th:field="*{label}" class="form-control" id="label" name="label" required maxlength="250">
+    </div>
+  </div>
+  <div class="mb-1 row">
+    <label class="form-label" for="played">Gespielt</label>
+    <div class="">
+      <input type="number" th:field="*{played}" class="form-control" id="played" name="played" required>
+    </div>
+  </div>
+  <div>
+    <div class="submit_wrapper">
+        <input type="submit" class="btn btn-primary" value="Speichern">
+        <input type="reset" class="btn btn-secondary" value="Zurücksetzen">
+        <input type="button" class="btn btn-secondary" onclick="cancelRelease()" value="Abbrechen">
+
+    </div>
+  </div>
+</form>
+</div>
+<script type="text/javascript">
+    function cancelRelease() {
+        window.location = "/Releases";
+    }
+</script>
+</body>
+</html>
+

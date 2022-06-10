@@ -1,0 +1,8 @@
+de.wit.bibinfo.plattenspieler
+de.wit.bibinfo.plattenspieler.config
+de.wit.bibinfo.plattenspieler.controller
+de.wit.bibinfo.plattenspieler.domain
+de.wit.bibinfo.plattenspieler.model.entities
+de.wit.bibinfo.plattenspieler.repositories
+de.wit.bibinfo.plattenspieler.services
+de.wit.bibinfo.plattenspieler.services.impl
