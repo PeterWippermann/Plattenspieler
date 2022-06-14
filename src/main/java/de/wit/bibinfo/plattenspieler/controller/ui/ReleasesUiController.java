@@ -45,10 +45,12 @@ public class ReleasesUiController {
 
 
     @PostMapping({"/saveReleases"})
-    public String saveReleases(ReleasesDto releasesDto, RedirectAttributes redirectAttributes) {
+    public ModelAndView saveReleases(ReleasesDto releasesDto, RedirectAttributes redirectAttributes) {
         releasesService.saveRelease(releasesDto);
-        redirectAttributes.addFlashAttribute("message", "Neuer Release wurde gespeichert");
-        return "redirect:/Releases";
+
+        // TODO Hier fehlt das Setzen des message Attributs für die Alert Message
+        
+        return listReleases();
 
     }
 
